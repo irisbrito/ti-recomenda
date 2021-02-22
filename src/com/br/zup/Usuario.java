@@ -3,6 +3,7 @@ package com.br.zup;
 public class Usuario {
     String email;
     String nome;
+    MeusFavoritos meusFavoritos;
 
     public boolean validaEmail() throws Exception {
 
