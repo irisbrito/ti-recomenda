@@ -10,7 +10,8 @@ public class Sistema {
         System.out.println("1. Adicionar uma recomendação");
         System.out.println("2. Apagar uma recomendação");
         System.out.println("3. Criar um usuário");
-        System.out.println("4. Sair:");
+        System.out.println("4. Visualizar as recomendações cadastradas");
+        System.out.println("5. Sair:");
     }
 
     private static void adicionarRecomendacao() {
@@ -21,7 +22,10 @@ public class Sistema {
 
     private static void adicionarUsuario() {
     }
-    
+
+    private static void visualizarRecomendacoes() {
+    }
+
     private static void menu() {
         imprimirMenu();
 
@@ -34,6 +38,8 @@ public class Sistema {
         } else if (opcao == 3) {
             adicionarUsuario();
         } else if (opcao == 4) {
+            visualizarRecomendacoes();
+        } else if (opcao == 5) {
             continuaExecutando = false;
         }
     }
