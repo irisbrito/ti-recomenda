@@ -83,15 +83,15 @@ public class Sistema {
      *
      * @throws Exception quando o email que o usuário quer adicionar no sistema não é válido
      */
-    private static void adicionarUsuario()throws Exception {
+    private static void adicionarUsuario() throws Exception {
         Usuario novousuario = new Usuario();
-        IO.mostrar("Digite seu e-nome: ");
+        IO.mostrar("Digite seu nome: ");
         String nome = IO.pegarLinha();
         String email = perguntarEmail();
         IO.mostrar("Parabéns, usuário cadastrado");
         novousuario.setNome(nome);
         novousuario.setEmail(email);
-
+        listaDeUsuarios.add(novousuario);
     }
 
     private static void deletarUsuario() throws Exception {
