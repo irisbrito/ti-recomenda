@@ -40,4 +40,14 @@ public class Filme {
     public void setEmailDeQuemIndicou(List<String> emailDeQuemIndicou) {
         this.emailDeQuemIndicou = emailDeQuemIndicou;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder construtor = new StringBuilder();
+        construtor.append("Título do filme: " + titulo);
+        construtor.append("Gênero: " + genero);
+        construtor.append("Quem recomendou: " + email);
+
+        return construtor.toString();
+    }
 }
