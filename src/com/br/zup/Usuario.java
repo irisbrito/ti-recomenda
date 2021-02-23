@@ -1,9 +1,4 @@
-
 package com.br.zup;
-
-/**
- * Classe com todos os atributos do usuário
- **/
 
 public class Usuario {
     private String nome;
@@ -13,19 +8,6 @@ public class Usuario {
     public Usuario() {
 
     }
-
-/**
- * Método que verifica se o e-mail do usuário é um e-mail válido
- * */
-
-    public boolean validaEmail() throws Exception {
-
-        ValidaEmail valida = new ValidaEmail();
-        return valida.isEmailvalido(email);
-    }
-/**
- * Getters e Setters dos atributos
- * */
 
     public String getEmail() {
         return email;

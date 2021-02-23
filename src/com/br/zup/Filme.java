@@ -13,7 +13,7 @@ public class Filme {
     private List <String> emailDeQuemIndicou;
     private String email;
 
-    public Filme(String titulo, String genero) {
+    public Filme(String titulo, String genero, String email) {
         this.titulo = titulo;
         this.genero = genero;
         this.email = email;

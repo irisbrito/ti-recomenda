@@ -23,7 +23,7 @@ public class Catalogo {
 
     public Filme adicionarFilme(String titulo, String genero, String email) throws Exception {
         validaEmail.isEmailvalido(email);
-        Filme filme = new Filme(titulo, genero);
+        Filme filme = new Filme(titulo, genero, email);
         listaDeFilmes.add(filme);
 
         return filme;
