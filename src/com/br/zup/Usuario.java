@@ -1,9 +1,9 @@
 package com.br.zup;
 
 public class Usuario {
-    String email;
-    String nome;
-    MeusFavoritos meusFavoritos;
+    private String email;
+    private String nome;
+    private MeusFavoritos meusFavoritos;
 
     public boolean validaEmail() throws Exception {
 
