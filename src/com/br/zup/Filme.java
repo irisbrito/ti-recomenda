@@ -1,7 +1,8 @@
 package com.br.zup;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 
 public class Filme {
     private String titulo;
@@ -9,11 +10,11 @@ public class Filme {
     private List <String> emailDeQuemIndicou;
     private String email;
 
-    public Filme(String titulo, String genero, String emailDeQuemIndicou) {
+    public Filme(String titulo, String genero) {
         this.titulo = titulo;
         this.genero = genero;
         this.email = email;
-        //this.emailDeQuemIndicou = emailDeQuemIndicou;
+        this.emailDeQuemIndicou = new ArrayList<>();
     }
 
     public String getTitulo() {

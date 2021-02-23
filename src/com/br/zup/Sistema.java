@@ -3,7 +3,9 @@ package com.br.zup;
 import java.util.Scanner;
 
 public class Sistema {
+    private static ValidaEmail validaEmail;
     private static boolean continuaExecutando;
+
 
     private static void imprimirMenu() {
         IO.mostrar("Escolha uma opção:");
@@ -16,7 +18,19 @@ public class Sistema {
 
     }
 
-    private static void adicionarRecomendacao() {
+    public static Filme adicionarRecomendacao() throws Exception {
+        IO.mostrar("Digite email");
+        String email = IO.pegarLinha();
+        validaEmail.isEmailvalido(email);
+        IO.mostrar("Digite o título do filme");
+        String titulo = IO.pegarLinha();
+        IO.mostrar("Digite o gênero do filme");
+        String genero = IO.pegarLinha();
+
+        Filme filme = Catalogo.adicionarFilme(titulo,genero,email);
+
+        return filme;
+
     }
 
     private static void apagarRecomendacao() {
@@ -31,7 +45,7 @@ public class Sistema {
     private static void adicionarAosSeusFavoritos() {
     }
 
-    private static void menu() {
+    private static void menu() throws Exception {
         imprimirMenu();
 
         int opcao = IO.pegarInt();
@@ -51,7 +65,7 @@ public class Sistema {
         }
     }
 
-    public static void executarSistema() {
+    public static void executarSistema() throws Exception {
         continuaExecutando = true;
 
         while (continuaExecutando) {
