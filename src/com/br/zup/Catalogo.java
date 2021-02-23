@@ -17,7 +17,7 @@ public class Catalogo {
         return filme;
     }
 
-    public Filme pesquisar(String nomeDoFilme) throws Exception {
+    public Filme pesquisarFilme(String nomeDoFilme) throws Exception {
         for (int i = 0; i < listaDeFilmes.size(); i++) {
             Filme filme = listaDeFilmes.get(i);
             if (filme.getTitulo().equals(nomeDoFilme)) {
@@ -29,7 +29,7 @@ public class Catalogo {
     }
 
     public void removerFilme(String nomeDoFilme) throws Exception {
-        Filme filme = pesquisar(nomeDoFilme);
+        Filme filme = pesquisarFilme(nomeDoFilme);
 
         listaDeFilmes.remove(filme);
     }
