@@ -7,7 +7,8 @@ import java.util.List;
  */
 
 public class MeusFavoritos extends Catalogo {
-    public MeusFavoritos() {
-        super();
-    }
+
+    private List<Filme> meusfilmesfavoritos = new ArrayList<>();
+    private ValidaEmail validaEmail = new ValidaEmail();
+
 }

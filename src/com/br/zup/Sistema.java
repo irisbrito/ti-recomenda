@@ -1,5 +1,7 @@
 package com.br.zup;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -10,6 +12,7 @@ public class Sistema {
     private static ValidaEmail validaEmail = new ValidaEmail();
     private static boolean continuaExecutando;
     private static Catalogo catalogo = new Catalogo();
+    private static MeusFavoritos meusfilmesfavoritos = new MeusFavoritos();
 
     /**
      * Imprime o menu de opções para o usuário
@@ -98,7 +101,19 @@ public class Sistema {
         IO.mostrar(catalogo.getFilmes().toString());
     }
 
-    private static void adicionarAosSeusFavoritos() {
+    private static Filme adicionarAosSeusFavoritos() throws Exception {
+        String email = perguntarEmail();
+        IO.mostrar("Digite o título do filme");
+        String titulo = IO.pegarLinha();
+        IO.mostrar("Digite o gênero do filme");
+        String genero = IO.pegarLinha();
+
+        Filme filme = meusfilmesfavoritos.adicionarFilme(titulo,genero,email);
+
+        IO.mostrar("Filme adicionado na sua lista de favoritos.");
+
+        return filme;
+
     }
 
     /**
