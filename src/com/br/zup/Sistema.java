@@ -6,13 +6,13 @@ public class Sistema {
     private static boolean continuaExecutando;
 
     private static void imprimirMenu() {
-        System.out.println("Escolha uma opção:");
-        System.out.println("1. Adicionar uma recomendação");
-        System.out.println("2. Apagar uma recomendação");
-        System.out.println("3. Criar um usuário");
-        System.out.println("4. Adicionar aos seus favoritos");
-        System.out.println("5. Visualizar as recomendações cadastradas");
-        System.out.println("6. Sair:");
+        IO.mostrar("Escolha uma opção:");
+        IO.mostrar("1. Adicionar uma recomendação");
+        IO.mostrar("2. Apagar uma recomendação");
+        IO.mostrar("3. Criar um usuário");
+        IO.mostrar("4. Adicionar aos seus favoritos");
+        IO.mostrar("5. Visualizar as recomendações cadastradas");
+        IO.mostrar("6. Sair:");
 
     }
 
@@ -34,7 +34,7 @@ public class Sistema {
     private static void menu() {
         imprimirMenu();
 
-        int opcao = new Scanner(System.in).nextInt();
+        int opcao = IO.pegarInt();
 
         if (opcao == 1) {
             adicionarRecomendacao();
