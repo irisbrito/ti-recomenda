@@ -29,10 +29,11 @@ public class Catalogo {
         throw new Exception("Filme não encontrado");
     }
 
-    public void removerFilme(String nomeDoFilme) throws Exception {
+    public Filme removerFilme(String nomeDoFilme) throws Exception {
         Filme filme = pesquisarFilme(nomeDoFilme);
 
         listaDeFilmes.remove(filme);
+        return filme;
     }
 
     public List <Filme> getFilmes() {
