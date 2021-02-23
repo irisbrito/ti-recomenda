@@ -19,10 +19,15 @@ public class Sistema {
 
     }
 
-    public static Filme adicionarRecomendacao() throws Exception {
+    private static String perguntarEmail() throws Exception {
         IO.mostrar("Digite email");
         String email = IO.pegarLinha();
         validaEmail.isEmailvalido(email);
+        return email;
+    }
+
+    public static Filme adicionarRecomendacao() throws Exception {
+        String email = perguntarEmail();
         IO.mostrar("Digite o título do filme");
         String titulo = IO.pegarLinha();
         IO.mostrar("Digite o gênero do filme");
@@ -35,9 +40,7 @@ public class Sistema {
     }
 
     private static void apagarRecomendacao() throws Exception {
-        IO.mostrar("Digite email");
-        String email = IO.pegarLinha();
-        validaEmail.isEmailvalido(email);
+        String email = perguntarEmail();
         IO.mostrar("Digite o título do filme");
         String titulo = IO.pegarLinha();
 
@@ -51,9 +54,7 @@ public class Sistema {
         Usuario novousuario = new Usuario();
         IO.mostrar("Digite seu e-nome: ");
         String nome = IO.pegarLinha();
-        IO.mostrar("Digite seu e-mail: ");
-        String email =IO.pegarLinha();
-        validaEmail.isEmailvalido(email);
+        String email = perguntarEmail();
         IO.mostrar("Parabéns, usuário cadastrado");
         novousuario.setNome(nome);
         novousuario.setEmail(email);
