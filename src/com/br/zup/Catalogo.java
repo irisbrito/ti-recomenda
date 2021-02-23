@@ -7,7 +7,6 @@ public class Catalogo {
     private List<Filme> listaDeFilmes = new ArrayList<>();
     private String email;
 
-
     public Filme adicionarFilme(String titulo, String genero, String email) throws Exception {
         if(!email.contains("@")){
             throw new Exception("Email invalido");
@@ -18,5 +17,21 @@ public class Catalogo {
         return filme;
     }
 
+    public Filme pesquisar(String nomeDoFilme) throws Exception {
+        for (int i = 0; i < listaDeFilmes.size(); i++) {
+            Filme filme = listaDeFilmes.get(i);
+            if (filme.getTitulo().equals(nomeDoFilme)) {
+                return filme;
+            }
+        }
+
+        throw new Exception("Filme não encontrado");
+    }
+
+    public void removerFilme(String nomeDoFilme) throws Exception {
+        Filme filme = pesquisar(nomeDoFilme);
+
+        listaDeFilmes.remove(filme);
+    }
 
 }
