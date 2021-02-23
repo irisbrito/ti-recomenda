@@ -3,6 +3,9 @@ package com.br.zup;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Classe Filme que contem os atributos, o construtor e os getters e setters
+ */
 
 public class Filme {
     private String titulo;
