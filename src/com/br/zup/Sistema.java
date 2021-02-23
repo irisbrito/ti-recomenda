@@ -34,7 +34,17 @@ public class Sistema {
 
     }
 
-    private static void apagarRecomendacao() {
+    private static void apagarRecomendacao() throws Exception {
+        IO.mostrar("Digite email");
+        String email = IO.pegarLinha();
+        validaEmail.isEmailvalido(email);
+        IO.mostrar("Digite o título do filme");
+        String titulo = IO.pegarLinha();
+
+        Filme filme = catalogo.removerFilme(titulo);
+
+        IO.mostrar("Filme removido.");
+
     }
 
     private static void adicionarUsuario() {
