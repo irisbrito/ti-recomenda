@@ -35,5 +35,8 @@ public class Catalogo {
         listaDeFilmes.remove(filme);
     }
 
+    public List <Filme> getFilmes() {
+        return listaDeFilmes;
 
+    }
 }

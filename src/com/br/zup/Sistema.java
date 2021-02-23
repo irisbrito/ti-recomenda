@@ -41,6 +41,7 @@ public class Sistema {
     }
 
     private static void visualizarRecomendacoes() {
+        IO.mostrar(catalogo.getFilmes().toString());
     }
 
     private static void adicionarAosSeusFavoritos() {
