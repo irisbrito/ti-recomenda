@@ -37,7 +37,17 @@ public class Sistema {
     private static void apagarRecomendacao() {
     }
 
-    private static void adicionarUsuario() {
+    private static void adicionarUsuario()throws Exception {
+        Usuario novousuario = new Usuario();
+        IO.mostrar("Digite seu e-nome: ");
+        String nome = IO.pegarLinha();
+        IO.mostrar("Digite seu e-mail: ");
+        String email =IO.pegarLinha();
+        validaEmail.isEmailvalido(email);
+        IO.mostrar("Parabéns, usuário cadastrado");
+        novousuario.setNome(nome);
+        novousuario.setEmail(email);
+
     }
 
     private static void visualizarRecomendacoes() {
