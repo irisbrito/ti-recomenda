@@ -3,20 +3,20 @@ package com.br.zup;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Catalogo {
     private List<Filme> listaDeFilmes = new ArrayList<>();
     private  String email;
+    private ValidaEmail validaEmail = new ValidaEmail();
 
     public Filme adicionarFilme(String titulo, String genero, String email) throws Exception {
-
-        if(!email.contains("@")){
-            throw new Exception("Email invalido");
-        }
+        validaEmail.isEmailvalido(email);
         Filme filme = new Filme(titulo, genero);
         listaDeFilmes.add(filme);
 
         return filme;
     }
+
 
     public Filme pesquisarFilme(String nomeDoFilme) throws Exception {
         for (int i = 0; i < listaDeFilmes.size(); i++) {
