@@ -7,7 +7,6 @@ public class ValidaEmail {
             throw new Exception("E-mail invalido");
         }else{
             return true;
-
         }
     }
 }

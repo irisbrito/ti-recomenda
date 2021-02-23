@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Sistema {
     private static ValidaEmail validaEmail;
     private static boolean continuaExecutando;
+    private static Catalogo catalogo;
 
 
     private static void imprimirMenu() {
@@ -27,7 +28,7 @@ public class Sistema {
         IO.mostrar("Digite o gênero do filme");
         String genero = IO.pegarLinha();
 
-        Filme filme = Catalogo.adicionarFilme(titulo,genero,email);
+        Filme filme = catalogo.adicionarFilme(titulo,genero,email);
 
         return filme;
 
