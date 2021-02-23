@@ -2,12 +2,19 @@ package com.br.zup;
 
 import java.util.Scanner;
 
+/**
+ * Classe que gerencia todas as partes do sistema
+ *
+ */
 public class Sistema {
     private static ValidaEmail validaEmail = new ValidaEmail();
     private static boolean continuaExecutando;
     private static Catalogo catalogo = new Catalogo();
 
-
+    /**
+     * Imprime o menu de opções para o usuário
+     *
+     */
     private static void imprimirMenu() {
         IO.mostrar("Escolha uma opção:");
         IO.mostrar("1. Adicionar uma recomendação");
@@ -19,6 +26,12 @@ public class Sistema {
 
     }
 
+    /**
+     * Pergunta o email para o usuário
+     *
+     * @return uma string com o email
+     * @throws Exception quando o email digitado pelo usuário não é válido
+     */
     private static String perguntarEmail() throws Exception {
         IO.mostrar("Digite email");
         String email = IO.pegarLinha();
@@ -26,6 +39,12 @@ public class Sistema {
         return email;
     }
 
+    /**
+     * Pergunta para o usuário os dados e adiciona uma recomendação na lista de recomendações do sistema
+     *
+     * @return um objeto filme adicionado no sistema
+     * @throws Exception quando o email do usuário não é válido
+     */
     public static Filme adicionarRecomendacao() throws Exception {
         String email = perguntarEmail();
         IO.mostrar("Digite o título do filme");
@@ -39,6 +58,11 @@ public class Sistema {
 
     }
 
+    /**
+     * Apaga uma recomendação do sistema
+     *
+     * @throws Exception quando o email do usuário que quer apagar a recomendação não é válido
+     */
     private static void apagarRecomendacao() throws Exception {
         String email = perguntarEmail();
         IO.mostrar("Digite o título do filme");
@@ -50,6 +74,11 @@ public class Sistema {
 
     }
 
+    /**
+     * Adiciona um usuário no sistema
+     *
+     * @throws Exception quando o email que o usuário quer adicionar no sistema não é válido
+     */
     private static void adicionarUsuario()throws Exception {
         Usuario novousuario = new Usuario();
         IO.mostrar("Digite seu e-nome: ");
@@ -61,6 +90,10 @@ public class Sistema {
 
     }
 
+    /**
+     * Mostra as recomendações cadastradas no sistema para o usuário
+     *
+     */
     private static void visualizarRecomendacoes() {
         IO.mostrar(catalogo.getFilmes().toString());
     }
@@ -68,6 +101,11 @@ public class Sistema {
     private static void adicionarAosSeusFavoritos() {
     }
 
+    /**
+     * Permite ao usuário escolher qual opção ele quer realizar no sistema
+     *
+     * @throws Exception quando alguma opção que o usuário tentou fazer dá um erro
+     */
     private static void menu() throws Exception {
         imprimirMenu();
 
@@ -88,6 +126,11 @@ public class Sistema {
         }
     }
 
+    /**
+     * Executa o sistema propriamente dito
+     *
+     * @throws Exception caso der algum erro na execução do sistema
+     */
     public static void executarSistema() throws Exception {
         continuaExecutando = true;
 
