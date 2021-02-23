@@ -2,11 +2,9 @@ package com.br.zup;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * Classe que gerencia todas as partes do sistema
- *
  */
 public class Sistema {
     private static ValidaEmail validaEmail = new ValidaEmail();
@@ -17,7 +15,6 @@ public class Sistema {
 
     /**
      * Imprime o menu de opções para o usuário
-     *
      */
     private static void imprimirMenu() {
         IO.mostrar("Escolha uma opção:");
@@ -33,7 +30,6 @@ public class Sistema {
 
     /**
      * Pergunta o email para o usuário
-     *
      * @return uma string com o email
      * @throws Exception quando o email digitado pelo usuário não é válido
      */
@@ -46,7 +42,6 @@ public class Sistema {
 
     /**
      * Pergunta para o usuário os dados e adiciona uma recomendação na lista de recomendações do sistema
-     *
      * @return um objeto filme adicionado no sistema
      * @throws Exception quando o email do usuário não é válido
      */
@@ -65,7 +60,6 @@ public class Sistema {
 
     /**
      * Apaga uma recomendação do sistema
-     *
      * @throws Exception quando o email do usuário que quer apagar a recomendação não é válido
      */
     private static void apagarRecomendacao() throws Exception {
@@ -81,7 +75,6 @@ public class Sistema {
 
     /**
      * Adiciona um usuário no sistema
-     *
      * @throws Exception quando o email que o usuário quer adicionar no sistema não é válido
      */
     private static void adicionarUsuario() throws Exception {
@@ -97,7 +90,7 @@ public class Sistema {
 
     /**
      * Método para deletar um usuário a partir do e-mail caadastrado
-     * @throws Exception
+     * @throws Exception Usuário não encontrado
      */
     private static void deletarUsuario() throws Exception {
         String email = perguntarEmail();
@@ -113,7 +106,6 @@ public class Sistema {
 
     /**
      * Mostra as recomendações cadastradas no sistema para o usuário
-     *
      */
     private static void visualizarRecomendacoes() {
         IO.mostrar(catalogo.getFilmes().toString());
@@ -136,7 +128,6 @@ public class Sistema {
 
     /**
      * Permite ao usuário escolher qual opção ele quer realizar no sistema
-     *
      * @throws Exception quando alguma opção que o usuário tentou fazer dá um erro
      */
     private static void menu() throws Exception {
@@ -163,7 +154,6 @@ public class Sistema {
 
     /**
      * Executa o sistema propriamente dito
-     *
      * @throws Exception caso der algum erro na execução do sistema
      */
     public static void executarSistema() throws Exception {
