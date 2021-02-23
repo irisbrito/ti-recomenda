@@ -95,6 +95,10 @@ public class Sistema {
         listaDeUsuarios.add(novousuario);
     }
 
+    /**
+     * Método para deletar um usuário a partir do e-mail caadastrado
+     * @throws Exception
+     */
     private static void deletarUsuario() throws Exception {
         String email = perguntarEmail();
         for (Usuario usuario : listaDeUsuarios) {
