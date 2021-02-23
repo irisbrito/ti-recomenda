@@ -36,5 +36,8 @@ public class Catalogo {
         return filme;
     }
 
+    public List <Filme> getFilmes() {
+        return listaDeFilmes;
 
+    }
 }
