@@ -3,9 +3,9 @@ package com.br.zup;
 import java.util.Scanner;
 
 public class Sistema {
-    private static ValidaEmail validaEmail;
+    private static ValidaEmail validaEmail = new ValidaEmail();
     private static boolean continuaExecutando;
-    private static Catalogo catalogo;
+    private static Catalogo catalogo = new Catalogo();
 
 
     private static void imprimirMenu() {
