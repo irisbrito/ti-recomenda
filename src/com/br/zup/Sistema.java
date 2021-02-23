@@ -13,6 +13,7 @@ public class Sistema {
     private static boolean continuaExecutando;
     private static Catalogo catalogo = new Catalogo();
     private static MeusFavoritos meusfilmesfavoritos = new MeusFavoritos();
+    private static List<Usuario> listaDeUsuarios = new ArrayList<>();
 
     /**
      * Imprime o menu de opções para o usuário
@@ -91,6 +92,18 @@ public class Sistema {
         novousuario.setNome(nome);
         novousuario.setEmail(email);
 
+    }
+
+    private static void deletarUsuario() throws Exception {
+        String email = perguntarEmail();
+        for (Usuario usuario : listaDeUsuarios) {
+            if (usuario.getEmail().equals(email)) {
+                listaDeUsuarios.remove(email);
+                IO.mostrar("Usuário deletado com sucesso");
+            } else {
+                throw new Exception("Usuário não encontrado");
+            }
+        }
     }
 
     /**
