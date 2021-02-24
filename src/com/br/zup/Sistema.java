@@ -80,7 +80,7 @@ public class Sistema {
         IO.mostrar("Digite seu nome: ");
         String nome = IO.pegarLinha();
         String email = perguntarEmail();
-
+        listaDeUsuarios.verificarSeEmailEstaCadastrado(email);
         listaDeUsuarios.adicionarUsuario(nome, email);
         IO.mostrar("Parabéns, usuário cadastrado");
     }
