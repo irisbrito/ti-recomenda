@@ -42,7 +42,7 @@ public class ListaDeUsuarios {
         usuarios.remove(usuario);
     }
 
-    public boolean isEmailvalido( String email) throws Exception {
+    public static boolean isEmailvalido( String email) throws Exception {
         if (!email.contains("@") && !email.contains(".com")) {
             throw new Exception("E-mail invalido");
         }else{
@@ -57,7 +57,6 @@ public class ListaDeUsuarios {
             }
         }
     }
-
 
     public List <Usuario> getUsuarios() {
         return usuarios;

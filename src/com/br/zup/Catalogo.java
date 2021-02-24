@@ -9,7 +9,6 @@ import java.util.List;
 
 public class Catalogo {
     private List<Filme> listaDeFilmes = new ArrayList<>();
-    private ListaDeUsuarios listaDeUsuarios = new ListaDeUsuarios();
 
     /**
      * Método para adicionar Filme às recomendações
@@ -21,7 +20,7 @@ public class Catalogo {
      */
 
     public Filme adicionarFilme(String titulo, String genero, String email) throws Exception {
-        listaDeUsuarios.isEmailvalido(email);
+        ListaDeUsuarios.isEmailvalido(email);
         try{
             Filme filme = pesquisarFilme(titulo);
         } catch (Exception e){
