@@ -10,10 +10,9 @@ public class ListaDeUsuarios {
         usuarios = new ArrayList <>();
     }
 
-    public Usuario adicionarUsuario(String nome, String email) {
+    public Usuario adicionarUsuario(String nome, String email)throws Exception  {
         try {
             Usuario usuario = pesquisarUsuarioPeloEmail(email);
-            throw new Exception("Usuário já está na lista.");
         } catch (Exception e) {
             Usuario usuario = new Usuario();
 
@@ -23,6 +22,8 @@ public class ListaDeUsuarios {
             usuarios.add(usuario);
             return usuario;
         }
+
+        throw new Exception("Usuário já está na lista.");
     }
 
     public Usuario pesquisarUsuarioPeloEmail(String email) throws Exception {
