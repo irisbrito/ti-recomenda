@@ -11,7 +11,7 @@ public class Sistema {
     private static boolean continuaExecutando;
     private static Catalogo catalogo = new Catalogo();
     private static MeusFavoritos meusfilmesfavoritos = new MeusFavoritos();
-    private static List<Usuario> listaDeUsuarios = new ArrayList<>();
+    private static ListaDeUsuarios listaDeUsuarios = new ListaDeUsuarios();
 
     /**
      * Imprime o menu de opções para o usuário
@@ -78,14 +78,12 @@ public class Sistema {
      * @throws Exception quando o email que o usuário quer adicionar no sistema não é válido
      */
     private static void adicionarUsuario() throws Exception {
-        Usuario novousuario = new Usuario();
         IO.mostrar("Digite seu nome: ");
         String nome = IO.pegarLinha();
         String email = perguntarEmail();
+
+        listaDeUsuarios.adicionarUsuario(nome, email);
         IO.mostrar("Parabéns, usuário cadastrado");
-        novousuario.setNome(nome);
-        novousuario.setEmail(email);
-        listaDeUsuarios.add(novousuario);
     }
 
     /**
@@ -94,13 +92,10 @@ public class Sistema {
      */
     private static void deletarUsuario() throws Exception {
         String email = perguntarEmail();
-        for (Usuario usuario : listaDeUsuarios) {
-            if (usuario.getEmail().equals(email)) {
-                listaDeUsuarios.remove(email);
-                IO.mostrar("Usuário deletado com sucesso");
-            }
-        }
-            throw new Exception("Usuário não encontrado");
+
+        listaDeUsuarios.removerUsuarioPeloEmail(email);
+
+        System.out.println("Usuário removido.");
     }
 
     /**
