@@ -29,6 +29,15 @@ public class Usuario {
         return meusFavoritos;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder construtor = new StringBuilder();
+
+        construtor.append("Nome: " + nome);
+        construtor.append("E-mail: " + email);
+
+        return construtor.toString();
+    }
 }
 
 
