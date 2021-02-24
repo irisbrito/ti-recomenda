@@ -22,7 +22,8 @@ public class Sistema {
         IO.mostrar("5. Visualizar os usuários cadastrados");
         IO.mostrar("6. Adicionar aos seus favoritos");
         IO.mostrar("7. Visualizar as recomendações cadastradas");
-        IO.mostrar("8. Sair:");
+        IO.mostrar("8. Visualizar seus favoritos");
+        IO.mostrar("9. Sair:");
 
     }
 
@@ -125,6 +126,11 @@ public class Sistema {
         return filme;
 
     }
+    private static MeusFavoritos favoritos = new MeusFavoritos();
+
+    private static void visualizarFavortitos() {
+        IO.mostrar(favoritos.getFilmes().toString());
+    }
 
     /**
      * Permite ao usuário escolher qual opção ele quer realizar no sistema
@@ -150,6 +156,8 @@ public class Sistema {
         } else if (opcao == 7) {
             visualizarRecomendacoes();
         } else if (opcao == 8) {
+            visualizarFavortitos();
+        } else if (opcao == 9) {
             continuaExecutando = false;
         }
     }
