@@ -156,13 +156,17 @@ public class Sistema {
 
     /**
      * Executa o sistema propriamente dito
-     * @throws Exception caso der algum erro na execução do sistema
+     *
      */
-    public static void executarSistema() throws Exception {
+    public static void executarSistema() {
         continuaExecutando = true;
 
         while (continuaExecutando) {
-            menu();
+            try {
+                menu();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 }
