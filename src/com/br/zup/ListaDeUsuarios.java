@@ -50,6 +50,15 @@ public class ListaDeUsuarios {
         }
     }
 
+    public void verificarSeEmailEstaCadastrado(String email) throws Exception {
+        for(Usuario usuario: usuarios){
+            if(usuario.getEmail().equals(email)){
+                throw new Exception("Email já cadastrado");
+            }
+        }
+    }
+
+
     public List <Usuario> getUsuarios() {
         return usuarios;
     }
