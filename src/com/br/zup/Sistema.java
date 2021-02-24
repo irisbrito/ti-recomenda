@@ -4,7 +4,6 @@ package com.br.zup;
  * Classe que gerencia todas as partes do sistema
  */
 public class Sistema {
-    private static ValidaEmail validaEmail = new ValidaEmail();
     private static boolean continuaExecutando;
     private static Catalogo catalogo = new Catalogo();
     private static MeusFavoritos meusfilmesfavoritos = new MeusFavoritos();

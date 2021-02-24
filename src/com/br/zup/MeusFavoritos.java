@@ -9,7 +9,6 @@ import java.util.List;
 public class MeusFavoritos extends Catalogo {
 
     private List<Filme> meusfilmesfavoritos = new ArrayList<>();
-    private ValidaEmail validaEmail = new ValidaEmail();
 
 }
 
