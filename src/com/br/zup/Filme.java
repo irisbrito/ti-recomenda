@@ -44,6 +44,10 @@ public class Filme {
         this.emailDeQuemIndicou = emailDeQuemIndicou;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
     @Override
     public String toString() {
         StringBuilder construtor = new StringBuilder();
