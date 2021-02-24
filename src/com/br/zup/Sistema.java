@@ -173,7 +173,7 @@ public class Sistema {
             try {
                 menu();
             } catch (Exception e) {
-                System.out.println(e.getMessage());
+                IO.mostrar(e.getMessage());
             }
         }
     }
