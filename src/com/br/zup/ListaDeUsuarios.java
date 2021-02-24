@@ -11,13 +11,18 @@ public class ListaDeUsuarios {
     }
 
     public Usuario adicionarUsuario(String nome, String email) {
-        Usuario usuario = new Usuario();
+        try {
+            Usuario usuario = pesquisarUsuarioPeloEmail(email);
+            throw new Exception("Usuário já está na lista.");
+        } catch (Exception e) {
+            Usuario usuario = new Usuario();
 
-        usuario.setNome(nome);
-        usuario.setEmail(email);
+            usuario.setNome(nome);
+            usuario.setEmail(email);
 
-        usuarios.add(usuario);
-        return usuario;
+            usuarios.add(usuario);
+            return usuario;
+        }
     }
 
     public Usuario pesquisarUsuarioPeloEmail(String email) throws Exception {
