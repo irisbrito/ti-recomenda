@@ -19,9 +19,10 @@ public class Sistema {
         IO.mostrar("4. Deletar um usuário");
         IO.mostrar("5. Visualizar os usuários cadastrados");
         IO.mostrar("6. Adicionar aos seus favoritos");
-        IO.mostrar("7. Visualizar as recomendações cadastradas");
-        IO.mostrar("8. Visualizar seus favoritos");
-        IO.mostrar("9. Sair:");
+        IO.mostrar("7. Remover favorito");
+        IO.mostrar("8. Visualizar as recomendações cadastradas");
+        IO.mostrar("9. Visualizar seus favoritos");
+        IO.mostrar("10. Sair:");
 
     }
 
@@ -126,6 +127,18 @@ public class Sistema {
 
     }
 
+    private static void removerFavorito() throws Exception {
+        String email = perguntarEmail();
+
+        IO.mostrar("Qual o título do filme?");
+        String titulo = IO.pegarLinha();
+
+        Usuario usuario = listaDeUsuarios.pesquisarUsuarioPeloEmail(email);
+        usuario.getMeusFavoritos().removerFilme(titulo);
+
+        IO.mostrar("Filme removido.");
+    }
+
     private static void visualizarFavoritos() throws Exception {
         String email = perguntarEmail();
 
@@ -155,10 +168,12 @@ public class Sistema {
         } else if (opcao == 6) {
             adicionarAosSeusFavoritos();
         } else if (opcao == 7) {
-            visualizarRecomendacoes();
+            removerFavorito();
         } else if (opcao == 8) {
-            visualizarFavoritos();
+            visualizarRecomendacoes();
         } else if (opcao == 9) {
+            visualizarFavoritos();
+        } else if (opcao == 10) {
             continuaExecutando = false;
         }
     }
