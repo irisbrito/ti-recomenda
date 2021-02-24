@@ -10,10 +10,6 @@ public class MeusFavoritos extends Catalogo {
 
     private List<Filme> meusfilmesfavoritos = new ArrayList<>();
     private ValidaEmail validaEmail = new ValidaEmail();
-    private static MeusFavoritos favoritos = new MeusFavoritos();
 
-    private static void visualizarFavortitos() {
-        IO.mostrar(favoritos.getFilmes().toString());
-    }
 }
 
