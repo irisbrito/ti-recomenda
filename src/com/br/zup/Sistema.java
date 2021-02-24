@@ -1,8 +1,5 @@
 package com.br.zup;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Classe que gerencia todas as partes do sistema
  */
