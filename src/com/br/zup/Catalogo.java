@@ -9,7 +9,6 @@ import java.util.List;
 
 public class Catalogo {
     private List<Filme> listaDeFilmes = new ArrayList<>();
-    private  String email;
     private ValidaEmail validaEmail = new ValidaEmail();
 
     /**
