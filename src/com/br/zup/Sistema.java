@@ -35,7 +35,7 @@ public class Sistema {
     private static String perguntarEmail() throws Exception {
         IO.mostrar("Digite email");
         String email = IO.pegarLinha();
-        validaEmail.isEmailvalido(email);
+        listaDeUsuarios.isEmailvalido(email);
         return email;
     }
 

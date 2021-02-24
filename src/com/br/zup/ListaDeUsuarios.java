@@ -41,6 +41,14 @@ public class ListaDeUsuarios {
         usuarios.remove(usuario);
     }
 
+    public boolean isEmailvalido( String email) throws Exception {
+        if (!email.contains("@") && !email.contains(".com")) {
+            throw new Exception("E-mail invalido");
+        }else{
+            return true;
+        }
+    }
+
     public List <Usuario> getUsuarios() {
         return usuarios;
     }
