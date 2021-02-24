@@ -10,10 +10,9 @@ public class ListaDeUsuarios {
         usuarios = new ArrayList<>();
     }
 
-    public Usuario adicionarUsuario(String nome, String email) {
+    public Usuario adicionarUsuario(String nome, String email)throws Exception  {
         try {
             Usuario usuario = pesquisarUsuarioPeloEmail(email);
-            throw new Exception("Usuário já está na lista.");
         } catch (Exception e) {
             Usuario usuario = new Usuario();
 
@@ -23,6 +22,8 @@ public class ListaDeUsuarios {
             usuarios.add(usuario);
             return usuario;
         }
+
+        throw new Exception("Usuário já está na lista.");
     }
 
     public Usuario pesquisarUsuarioPeloEmail(String email) throws Exception {
@@ -41,9 +42,24 @@ public class ListaDeUsuarios {
         usuarios.remove(usuario);
         }
 
-        public List<Usuario> getUsuarios() {
-            return usuarios;
+    public static boolean isEmailvalido( String email) throws Exception {
+        if (!email.contains("@") && !email.contains(".com")) {
+            throw new Exception("E-mail invalido");
+        }else{
+            return true;
         }
+    }
 
+    public void verificarSeEmailEstaCadastrado(String email) throws Exception {
+        for(Usuario usuario: usuarios){
+            if(usuario.getEmail().equals(email)){
+                throw new Exception("Email já cadastrado");
             }
+        }
+    }
+
+    public List <Usuario> getUsuarios() {
+        return usuarios;
+    }
+}
 

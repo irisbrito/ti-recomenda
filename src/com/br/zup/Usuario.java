@@ -6,7 +6,7 @@ public class Usuario {
     private MeusFavoritos meusFavoritos;
 
     public Usuario() {
-
+        meusFavoritos = new MeusFavoritos();
     }
 
     public String getEmail() {
