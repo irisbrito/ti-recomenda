@@ -24,13 +24,14 @@ public class Catalogo {
         validaEmail.isEmailvalido(email);
         try{
             Filme filme = pesquisarFilme(titulo);
-            throw new Exception("Filme já cadastrado.");
         } catch (Exception e){
             Filme filme = new Filme(titulo, genero, email);
             listaDeFilmes.add(filme);
 
             return filme;
         }
+
+        throw new Exception("Filme já cadastrado.");
     }
 
 
