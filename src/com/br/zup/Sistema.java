@@ -98,10 +98,9 @@ public class Sistema {
             if (usuario.getEmail().equals(email)) {
                 listaDeUsuarios.remove(email);
                 IO.mostrar("Usuário deletado com sucesso");
-            } else {
-                throw new Exception("Usuário não encontrado");
             }
         }
+            throw new Exception("Usuário não encontrado");
     }
 
     /**
