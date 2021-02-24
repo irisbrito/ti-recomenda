@@ -22,11 +22,17 @@ public class Catalogo {
 
     public Filme adicionarFilme(String titulo, String genero, String email) throws Exception {
         validaEmail.isEmailvalido(email);
-        Filme filme = new Filme(titulo, genero, email);
-        listaDeFilmes.add(filme);
+        try{
+            Filme filme = pesquisarFilme(titulo);
+            throw new Exception("Filme já cadastrado.");
+        } catch (Exception e){
+            Filme filme = new Filme(titulo, genero, email);
+            listaDeFilmes.add(filme);
 
-        return filme;
+            return filme;
+        }
     }
+
 
     /**
      * Método para pesquisar filme de acordo com o título
