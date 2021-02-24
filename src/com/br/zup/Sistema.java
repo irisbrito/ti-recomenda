@@ -22,9 +22,10 @@ public class Sistema {
         IO.mostrar("2. Apagar uma recomendação");
         IO.mostrar("3. Criar um usuário");
         IO.mostrar("4. Deletar um usuário");
-        IO.mostrar("5. Adicionar aos seus favoritos");
-        IO.mostrar("6. Visualizar as recomendações cadastradas");
-        IO.mostrar("7. Sair:");
+        IO.mostrar("5. Visualizar os usuários cadastrados");
+        IO.mostrar("6. Adicionar aos seus favoritos");
+        IO.mostrar("7. Visualizar as recomendações cadastradas");
+        IO.mostrar("8. Sair:");
 
     }
 
@@ -99,6 +100,14 @@ public class Sistema {
     }
 
     /**
+     * Mostra a lista de usuários para o usuário
+     *
+     */
+    private static  void visualizarUsuarios() {
+        IO.mostrar(listaDeUsuarios.getUsuarios().toString());
+    }
+
+    /**
      * Mostra as recomendações cadastradas no sistema para o usuário
      */
     private static void visualizarRecomendacoes() {
@@ -138,10 +147,12 @@ public class Sistema {
         } else if (opcao == 4) {
             deletarUsuario();
         } else if (opcao == 5) {
-            adicionarAosSeusFavoritos();
+            visualizarUsuarios();
         } else if (opcao == 6) {
-            visualizarRecomendacoes();
+            adicionarAosSeusFavoritos();
         } else if (opcao == 7) {
+            visualizarRecomendacoes();
+        } else if (opcao == 8) {
             continuaExecutando = false;
         }
     }
