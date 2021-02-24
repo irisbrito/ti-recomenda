@@ -6,7 +6,6 @@ package com.br.zup;
 public class Sistema {
     private static boolean continuaExecutando;
     private static Catalogo catalogo = new Catalogo();
-    private static MeusFavoritos meusfilmesfavoritos = new MeusFavoritos();
     private static ListaDeUsuarios listaDeUsuarios = new ListaDeUsuarios();
 
     /**
@@ -113,22 +112,25 @@ public class Sistema {
 
     private static Filme adicionarAosSeusFavoritos() throws Exception {
         String email = perguntarEmail();
+        Usuario usuario = listaDeUsuarios.pesquisarUsuarioPeloEmail(email);
         IO.mostrar("Digite o título do filme");
         String titulo = IO.pegarLinha();
         IO.mostrar("Digite o gênero do filme");
         String genero = IO.pegarLinha();
 
-        Filme filme = meusfilmesfavoritos.adicionarFilme(titulo,genero,email);
+        Filme filme = usuario.getMeusFavoritos().adicionarFilme(titulo, genero, email);
 
         IO.mostrar("Filme adicionado na sua lista de favoritos.");
 
         return filme;
 
     }
-    private static MeusFavoritos favoritos = new MeusFavoritos();
 
-    private static void visualizarFavortitos() {
-        IO.mostrar(favoritos.getFilmes().toString());
+    private static void visualizarFavoritos() throws Exception {
+        String email = perguntarEmail();
+
+        Usuario usuario = listaDeUsuarios.pesquisarUsuarioPeloEmail(email);
+        IO.mostrar(usuario.getMeusFavoritos().getFilmes().toString());
     }
 
     /**
@@ -155,7 +157,7 @@ public class Sistema {
         } else if (opcao == 7) {
             visualizarRecomendacoes();
         } else if (opcao == 8) {
-            visualizarFavortitos();
+            visualizarFavoritos();
         } else if (opcao == 9) {
             continuaExecutando = false;
         }
