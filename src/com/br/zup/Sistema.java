@@ -117,11 +117,10 @@ public class Sistema {
         IO.mostrar(catalogo.getFilmes().toString());
     }
 
-    private static List<Filme> visualizarMinhasRecomendacoes() throws Exception {
+    private static void visualizarMinhasRecomendacoes() throws Exception {
         String email = perguntarEmail();
         List<Filme> lista = catalogo.minhasRecomendacoes(email);
-
-        return lista;
+        IO.mostrar(lista.toString());
     }
 
     private static void visualizarRecomendacoesPeloGenero() {
