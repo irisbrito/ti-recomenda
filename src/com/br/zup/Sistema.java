@@ -115,12 +115,11 @@ public class Sistema {
         IO.mostrar(catalogo.getFilmes().toString());
     }
 
-    private static List<String> visualizarRecomendacoesPeloGenero(){
+    private static void visualizarRecomendacoesPeloGenero(){
         IO.mostrar("Digite o gênero desejado");
         String generoDesejado = IO.pegarLinha();
         List<String> lista = catalogo.pegarListaDeGenero(generoDesejado);
-
-        return lista;
+        IO.mostrar(lista.toString());
     }
 
     private static Filme adicionarAosSeusFavoritos() throws Exception {
