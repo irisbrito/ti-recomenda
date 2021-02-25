@@ -53,7 +53,7 @@ public class Catalogo {
         throw new Exception("Filme não encontrado");
     }
 
-    public List<String> pegarListaDeGenero(String genero){
+    public List<String> pegarFilmesComOGenero(String genero){
         for(Filme filme : listaDeFilmes){
             if(filme.getGenero().equals(genero)){
                 listaDeGenero.add(filme.getTitulo());

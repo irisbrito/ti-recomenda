@@ -126,7 +126,7 @@ public class Sistema {
     private static void visualizarRecomendacoesPeloGenero() {
         IO.mostrar("Digite o gênero desejado");
         String generoDesejado = IO.pegarLinha();
-        List<String> lista = catalogo.pegarListaDeGenero(generoDesejado);
+        List<String> lista = catalogo.pegarFilmesComOGenero(generoDesejado);
         IO.mostrar(lista.toString());
     }
 
