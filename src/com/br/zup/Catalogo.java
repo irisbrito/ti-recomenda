@@ -67,4 +67,14 @@ public class Catalogo {
     public List <Filme> getFilmes() {
         return listaDeFilmes;
     }
+
+    public List<Filme> minhasRecomendacoes(String email) {
+        List<Filme> minhasrecomendacoes = new ArrayList<>();
+        for (Filme filme : listaDeFilmes) {
+            if ( filme.getEmail().equals(email) ) {
+                minhasrecomendacoes.add(filme);
+            }
+        }
+        return minhasrecomendacoes;
+    }
 }

@@ -10,6 +10,7 @@ public class Sistema {
     private static Catalogo catalogo = new Catalogo();
     private static ListaDeUsuarios listaDeUsuarios = new ListaDeUsuarios();
 
+
     /**
      * Imprime o menu de opções para o usuário
      */
@@ -113,7 +114,11 @@ public class Sistema {
     private static void visualizarRecomendacoes() {
         IO.mostrar(catalogo.getFilmes().toString());
     }
-
+    private static List<Filme> visualizarMinhasRecomendacoes() throws Exception{
+        String email = perguntarEmail();
+        List<Filme> lista = catalogo.minhasRecomendacoes(email);
+        return lista;
+    }
 
     private static Filme adicionarAosSeusFavoritos() throws Exception {
         String email = perguntarEmail();
