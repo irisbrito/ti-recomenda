@@ -10,6 +10,7 @@ public class Sistema {
     private static Catalogo catalogo;
     private static ListaDeUsuarios listaDeUsuarios;
 
+
     /**
      * Imprime o menu de opções para o usuário
      */
@@ -115,12 +116,20 @@ public class Sistema {
         IO.mostrar(catalogo.getFilmes().toString());
     }
 
-    private static void visualizarRecomendacoesPeloGenero(){
+    private static List<Filme> visualizarMinhasRecomendacoes() throws Exception {
+        String email = perguntarEmail();
+        List<Filme> lista = catalogo.minhasRecomendacoes(email);
+
+        return lista;
+    }
+
+    private static void visualizarRecomendacoesPeloGenero() {
         IO.mostrar("Digite o gênero desejado");
         String generoDesejado = IO.pegarLinha();
         List<String> lista = catalogo.pegarListaDeGenero(generoDesejado);
         IO.mostrar(lista.toString());
     }
+
 
     private static Filme adicionarAosSeusFavoritos() throws Exception {
         String email = perguntarEmail();

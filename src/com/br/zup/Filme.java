@@ -59,17 +59,8 @@ public class Filme {
 
         return construtor.toString();
     }
-
-    public List<Filme> minhasRecomendacoes() {
-        for (Filme filme : catalogo.getFilmes()) {
-            if ( email.equals(emailDeQuemIndicou) ) {
-                minhasrecomendacoes.add(filme);
-            }
-        }
-        IO.mostrar("Veja suas recomendações");
-        return minhasrecomendacoes;
     }
-}
+
 
 
 
