@@ -9,7 +9,6 @@ import java.util.List;
 
 public class Catalogo {
     private List<Filme> listaDeFilmes = new ArrayList<>();
-    private List<String> listaDeGenero = new ArrayList<>();
 
     /**
      * Método para adicionar Filme às recomendações
@@ -54,14 +53,27 @@ public class Catalogo {
     }
 
     public List<String> pegarFilmesComOGenero(String genero){
+        List<String> listaDeFilmesComOGenero = new ArrayList<>();
+
         for(Filme filme : listaDeFilmes){
             if(filme.getGenero().equals(genero)){
-                listaDeGenero.add(filme.getTitulo());
+                listaDeFilmesComOGenero.add(filme.getTitulo());
             }
         }
-        return listaDeGenero;
+        return listaDeFilmesComOGenero;
     }
 
+    public List <String> pegarListaDeGeneros() {
+        List <String> listaDeGeneros = new ArrayList<>();
+
+        for (Filme filme: listaDeFilmes) {
+            if (!listaDeGeneros.contains(filme.getGenero())) {
+                listaDeGeneros.add(filme.getGenero());
+            }
+        }
+
+        return listaDeGeneros;
+    }
     /**
      * Método para remover filme do catálogo de recomendações
      * @param nomeDoFilme
