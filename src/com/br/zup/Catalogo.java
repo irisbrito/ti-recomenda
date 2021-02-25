@@ -63,6 +63,17 @@ public class Catalogo {
         return listaDeFilmesComOGenero;
     }
 
+    public List <String> pegarListaDeGeneros() {
+        List <String> listaDeGeneros = new ArrayList<>();
+
+        for (Filme filme: listaDeFilmes) {
+            if (!listaDeGeneros.contains(filme.getGenero())) {
+                listaDeGeneros.add(filme.getGenero());
+            }
+        }
+
+        return listaDeGeneros;
+    }
     /**
      * Método para remover filme do catálogo de recomendações
      * @param nomeDoFilme
