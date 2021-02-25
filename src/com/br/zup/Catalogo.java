@@ -74,6 +74,7 @@ public class Catalogo {
 
         return listaDeGeneros;
     }
+
     /**
      * Método para remover filme do catálogo de recomendações
      * @param nomeDoFilme
