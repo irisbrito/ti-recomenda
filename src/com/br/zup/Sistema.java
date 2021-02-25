@@ -1,5 +1,7 @@
 package com.br.zup;
 
+import java.util.List;
+
 /**
  * Classe que gerencia todas as partes do sistema
  */
@@ -51,6 +53,7 @@ public class Sistema {
         String genero = IO.pegarLinha();
 
         Filme filme = catalogo.adicionarFilme(titulo,genero,email);
+
 
         return filme;
 
@@ -110,6 +113,7 @@ public class Sistema {
     private static void visualizarRecomendacoes() {
         IO.mostrar(catalogo.getFilmes().toString());
     }
+
 
     private static Filme adicionarAosSeusFavoritos() throws Exception {
         String email = perguntarEmail();
