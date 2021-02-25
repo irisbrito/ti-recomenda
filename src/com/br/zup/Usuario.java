@@ -1,5 +1,8 @@
 package com.br.zup;
 
+/**
+ *  Classe com os atributos e getters e setters do usuário
+ */
 public class Usuario {
     private String nome;
     private String email;
