@@ -16,17 +16,18 @@ public class Sistema {
      */
     private static void imprimirMenu() {
         IO.mostrar("Escolha uma opção:");
-        IO.mostrar("1. Adicionar uma recomendação");
-        IO.mostrar("2. Apagar uma recomendação");
-        IO.mostrar("3. Criar um usuário");
-        IO.mostrar("4. Deletar um usuário");
-        IO.mostrar("5. Visualizar os usuários cadastrados");
-        IO.mostrar("6. Adicionar aos seus favoritos");
-        IO.mostrar("7. Remover favorito");
-        IO.mostrar("8. Visualizar as recomendações cadastradas");
-        IO.mostrar("9. Visualizar seus favoritos");
-        IO.mostrar("10. Sair:");
-        IO.mostrar("11. Descobrir filmes por gênero");
+        IO.mostrar("1. Descobrir filmes por gênero");
+        IO.mostrar("2. Adicionar uma recomendação");
+        IO.mostrar("3. Apagar uma recomendação");
+        IO.mostrar("4. Criar um usuário");
+        IO.mostrar("5. Deletar um usuário");
+        IO.mostrar("6. Visualizar os usuários cadastrados");
+        IO.mostrar("7. Adicionar aos seus favoritos");
+        IO.mostrar("8. Remover favorito");
+        IO.mostrar("9. Visualizar todos os filmes");
+        IO.mostrar("10. Visualizar seus favoritos");
+        IO.mostrar("11. Visualizar minhas recomendações");
+        IO.mostrar("12. Sair");
 
     }
 
@@ -177,27 +178,29 @@ public class Sistema {
         int opcao = IO.pegarInt();
 
         if (opcao == 1) {
-            adicionarRecomendacao();
-        } else if (opcao == 2) {
-            apagarRecomendacao();
-        } else if (opcao == 3) {
-            adicionarUsuario();
-        } else if (opcao == 4) {
-            deletarUsuario();
-        } else if (opcao == 5) {
-            visualizarUsuarios();
-        } else if (opcao == 6) {
-            adicionarAosSeusFavoritos();
-        } else if (opcao == 7) {
-            removerFavorito();
-        } else if (opcao == 8) {
-            visualizarRecomendacoes();
-        } else if (opcao == 9) {
-            visualizarFavoritos();
-        } else if (opcao == 10) {
-            continuaExecutando = false;
-        } else if (opcao == 11){
             visualizarRecomendacoesPeloGenero();
+        } else if (opcao == 2) {
+            adicionarRecomendacao();
+        } else if (opcao == 3) {
+            apagarRecomendacao();
+        } else if (opcao == 4) {
+            adicionarUsuario();
+        } else if (opcao == 5) {
+            deletarUsuario();
+        } else if (opcao == 6) {
+            visualizarUsuarios();
+        } else if (opcao == 7) {
+            adicionarAosSeusFavoritos();
+        } else if (opcao == 8) {
+            removerFavorito();
+        } else if (opcao == 9) {
+            visualizarRecomendacoes();
+        } else if (opcao == 10) {
+            visualizarFavoritos();
+        } else if (opcao == 11) {
+            visualizarRecomendacoes();
+        } else if (opcao == 12){
+            continuaExecutando = false;
         }
     }
 
