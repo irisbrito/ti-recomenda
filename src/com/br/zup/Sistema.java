@@ -1,5 +1,7 @@
 package com.br.zup;
 
+import java.util.List;
+
 /**
  * Classe que gerencia todas as partes do sistema
  */
@@ -7,7 +9,7 @@ public class Sistema {
     private static boolean continuaExecutando;
     private static Catalogo catalogo = new Catalogo();
     private static ListaDeUsuarios listaDeUsuarios = new ListaDeUsuarios();
-    private static MinhasRecomendacoes minhasrecomendacoes = new MinhasRecomendacoes();
+
     /**
      * Imprime o menu de opções para o usuário
      */

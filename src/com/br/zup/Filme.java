@@ -10,8 +10,10 @@ import java.util.List;
 public class Filme {
     private String titulo;
     private String genero;
-    private List <String> emailDeQuemIndicou;
+    private List<String> emailDeQuemIndicou;
     private String email;
+    private List<Filme> minhasrecomendacoes = new ArrayList<>();
+    private static Catalogo catalogo = new Catalogo();
 
     public Filme(String titulo, String genero, String email) {
         this.titulo = titulo;
@@ -57,4 +59,18 @@ public class Filme {
 
         return construtor.toString();
     }
+
+    public List<Filme> minhasRecomendacoes() {
+        for (Filme filme : catalogo.getFilmes()) {
+            if ( email.equals(emailDeQuemIndicou) ) {
+                minhasrecomendacoes.add(filme);
+            }
+        }
+        IO.mostrar("Veja suas recomendações");
+        return minhasrecomendacoes;
+    }
 }
+
+
+
+
