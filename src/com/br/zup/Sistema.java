@@ -7,8 +7,8 @@ import java.util.List;
  */
 public class Sistema {
     private static boolean continuaExecutando;
-    private static Catalogo catalogo = new Catalogo();
-    private static ListaDeUsuarios listaDeUsuarios = new ListaDeUsuarios();
+    private static Catalogo catalogo;
+    private static ListaDeUsuarios listaDeUsuarios;
 
 
     /**
@@ -26,6 +26,7 @@ public class Sistema {
         IO.mostrar("8. Visualizar as recomendações cadastradas");
         IO.mostrar("9. Visualizar seus favoritos");
         IO.mostrar("10. Sair:");
+        IO.mostrar("11. Descobrir filmes por gênero");
 
     }
 
@@ -114,9 +115,18 @@ public class Sistema {
     private static void visualizarRecomendacoes() {
         IO.mostrar(catalogo.getFilmes().toString());
     }
+<<<<<<< HEAD
     private static List<Filme> visualizarMinhasRecomendacoes() throws Exception{
         String email = perguntarEmail();
         List<Filme> lista = catalogo.minhasRecomendacoes(email);
+=======
+
+    private static List<String> visualizarRecomendacoesPeloGenero(){
+        IO.mostrar("Digite o gênero desejado");
+        String generoDesejado = IO.pegarLinha();
+        List<String> lista = catalogo.pegarListaDeGenero(generoDesejado);
+
+>>>>>>> 5c6fc8f3cc4132c33ddefcd46a75a0ebf732010d
         return lista;
     }
 
@@ -184,6 +194,8 @@ public class Sistema {
             visualizarFavoritos();
         } else if (opcao == 10) {
             continuaExecutando = false;
+        } else if (opcao == 11){
+            visualizarRecomendacoesPeloGenero();
         }
     }
 
@@ -194,12 +206,28 @@ public class Sistema {
     public static void executarSistema() {
         continuaExecutando = true;
 
+        try {
+            catalogo = BancoDeDados.lerCatalogoDoArquivo("filmes.txt");
+            listaDeUsuarios = BancoDeDados.lerListaDeUsuarios("usuarios.txt");
+        } catch (Exception e) {
+            IO.mostrar("Erro " + e.getMessage()+ " ao ler os dados do arquivo. Criando uma lista vazia...");
+            catalogo = new Catalogo();
+            listaDeUsuarios = new ListaDeUsuarios();
+        }
+
         while (continuaExecutando) {
             try {
                 menu();
             } catch (Exception e) {
                 IO.mostrar(e.getMessage());
             }
+        }
+
+        try {
+            BancoDeDados.salvarCatalogoParaArquivo("filmes.txt", catalogo);
+            BancoDeDados.salvarListaDeUsuariosParaArquivo("usuarios.txt", listaDeUsuarios);
+        } catch (Exception e) {
+            IO.mostrar("Erro ao salvar os dados para arquivo: " + e.getMessage());
         }
     }
 }
