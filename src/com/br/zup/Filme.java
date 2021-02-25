@@ -53,9 +53,9 @@ public class Filme {
     @Override
     public String toString() {
         StringBuilder construtor = new StringBuilder();
-        construtor.append("Título do filme: " + titulo);
-        construtor.append("Gênero: " + genero);
-        construtor.append("Quem recomendou: " + email);
+        construtor.append("\nTítulo do filme: " + titulo);
+        construtor.append("\nGênero: " + genero);
+        construtor.append("\nQuem recomendou: " + email);
 
         return construtor.toString();
     }
