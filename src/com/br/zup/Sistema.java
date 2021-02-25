@@ -198,7 +198,7 @@ public class Sistema {
         } else if (opcao == 10) {
             visualizarFavoritos();
         } else if (opcao == 11) {
-            visualizarRecomendacoes();
+            visualizarMinhasRecomendacoes();
         } else if (opcao == 12){
             continuaExecutando = false;
         }
