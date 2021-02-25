@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Catalogo {
     private List<Filme> listaDeFilmes = new ArrayList<>();
+    private List<String> listaDeGenero = new ArrayList<>();
 
     /**
      * Método para adicionar Filme às recomendações
@@ -26,6 +27,7 @@ public class Catalogo {
         } catch (Exception e){
             Filme filme = new Filme(titulo, genero, email);
             listaDeFilmes.add(filme);
+
 
             return filme;
         }
@@ -49,6 +51,15 @@ public class Catalogo {
         }
 
         throw new Exception("Filme não encontrado");
+    }
+
+    public List<String> pegarListaDeGenero(String genero){
+        for(Filme filme : listaDeFilmes){
+            if(filme.getGenero().equals(genero)){
+                listaDeGenero.add(filme.getTitulo());
+            }
+        }
+        return listaDeGenero;
     }
 
     /**

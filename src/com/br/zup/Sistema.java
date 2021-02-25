@@ -1,5 +1,7 @@
 package com.br.zup;
 
+import java.util.List;
+
 /**
  * Classe que gerencia todas as partes do sistema
  */
@@ -23,6 +25,7 @@ public class Sistema {
         IO.mostrar("8. Visualizar as recomendações cadastradas");
         IO.mostrar("9. Visualizar seus favoritos");
         IO.mostrar("10. Sair:");
+        IO.mostrar("11. Descobrir filmes por gênero");
 
     }
 
@@ -111,6 +114,16 @@ public class Sistema {
         IO.mostrar(catalogo.getFilmes().toString());
     }
 
+    private static List<String> visualizarRecomendacoesPeloGenero(){
+        IO.mostrar("Digite o gênero desejado");
+        String generoDesejado = IO.pegarLinha();
+        List<String> lista = catalogo.pegarListaDeGenero(generoDesejado);
+
+        return lista;
+    }
+
+
+
     private static Filme adicionarAosSeusFavoritos() throws Exception {
         String email = perguntarEmail();
         Usuario usuario = listaDeUsuarios.pesquisarUsuarioPeloEmail(email);
@@ -175,6 +188,8 @@ public class Sistema {
             visualizarFavoritos();
         } else if (opcao == 10) {
             continuaExecutando = false;
+        } else if (opcao == 11){
+            visualizarRecomendacoesPeloGenero();
         }
     }
 
