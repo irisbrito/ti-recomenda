@@ -61,12 +61,14 @@ public class BancoDeDados {
         for (Usuario usuario: listaDeUsuarios.getUsuarios()) {
             salvarUsuarioParaArquivo(escritor, usuario);
         }
+
+        escritor.close();
     }
 
     private static void salvarFilmeParaArquivo(FileWriter escritor, Filme filme)throws Exception  {
-        escritor.write(filme.getTitulo());
-        escritor.write(filme.getGenero());
-        escritor.write(filme.getEmail());
+        escritor.write(filme.getTitulo() + "\n");
+        escritor.write(filme.getGenero() + "\n");
+        escritor.write(filme.getEmail() + "\n");
     }
 
     public static void salvarCatalogoParaArquivo(String nomeDoArquivo, Catalogo catalogo) throws Exception {
