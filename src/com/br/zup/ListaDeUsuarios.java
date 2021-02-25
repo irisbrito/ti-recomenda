@@ -7,7 +7,7 @@ public class ListaDeUsuarios {
     private List<Usuario> usuarios;
 
     public ListaDeUsuarios() {
-        usuarios = new ArrayList <>();
+        usuarios = new ArrayList<>();
     }
 
     public Usuario adicionarUsuario(String nome, String email)throws Exception  {
@@ -27,8 +27,8 @@ public class ListaDeUsuarios {
     }
 
     public Usuario pesquisarUsuarioPeloEmail(String email) throws Exception {
-        for (Usuario usuario: usuarios) {
-            if (usuario.getEmail().equalsIgnoreCase(email)) {
+        for (Usuario usuario : usuarios) {
+            if ( usuario.getEmail().equalsIgnoreCase(email) ) {
                 return usuario;
             }
         }
@@ -40,7 +40,7 @@ public class ListaDeUsuarios {
         Usuario usuario = pesquisarUsuarioPeloEmail(email);
 
         usuarios.remove(usuario);
-    }
+        }
 
     public static boolean isEmailvalido( String email) throws Exception {
         if (!email.contains("@") && !email.contains(".com")) {
@@ -62,3 +62,4 @@ public class ListaDeUsuarios {
         return usuarios;
     }
 }
+

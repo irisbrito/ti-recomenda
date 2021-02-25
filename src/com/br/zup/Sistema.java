@@ -7,8 +7,8 @@ import java.util.List;
  */
 public class Sistema {
     private static boolean continuaExecutando;
-    private static Catalogo catalogo = new Catalogo();
-    private static ListaDeUsuarios listaDeUsuarios = new ListaDeUsuarios();
+    private static Catalogo catalogo;
+    private static ListaDeUsuarios listaDeUsuarios;
 
     /**
      * Imprime o menu de opções para o usuário
@@ -54,6 +54,7 @@ public class Sistema {
         String genero = IO.pegarLinha();
 
         Filme filme = catalogo.adicionarFilme(titulo,genero,email);
+
 
         return filme;
 
@@ -121,8 +122,6 @@ public class Sistema {
 
         return lista;
     }
-
-
 
     private static Filme adicionarAosSeusFavoritos() throws Exception {
         String email = perguntarEmail();
@@ -200,12 +199,28 @@ public class Sistema {
     public static void executarSistema() {
         continuaExecutando = true;
 
+        try {
+            catalogo = BancoDeDados.lerCatalogoDoArquivo("filmes.txt");
+            listaDeUsuarios = BancoDeDados.lerListaDeUsuarios("usuarios.txt");
+        } catch (Exception e) {
+            IO.mostrar("Erro " + e.getMessage()+ " ao ler os dados do arquivo. Criando uma lista vazia...");
+            catalogo = new Catalogo();
+            listaDeUsuarios = new ListaDeUsuarios();
+        }
+
         while (continuaExecutando) {
             try {
                 menu();
             } catch (Exception e) {
                 IO.mostrar(e.getMessage());
             }
+        }
+
+        try {
+            BancoDeDados.salvarCatalogoParaArquivo("filmes.txt", catalogo);
+            BancoDeDados.salvarListaDeUsuariosParaArquivo("usuarios.txt", listaDeUsuarios);
+        } catch (Exception e) {
+            IO.mostrar("Erro ao salvar os dados para arquivo: " + e.getMessage());
         }
     }
 }
