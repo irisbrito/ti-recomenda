@@ -10,16 +10,12 @@ import java.util.List;
 public class Filme {
     private String titulo;
     private String genero;
-    private List<String> emailDeQuemIndicou;
     private String email;
-    private List<Filme> minhasrecomendacoes = new ArrayList<>();
-    private static Catalogo catalogo = new Catalogo();
 
     public Filme(String titulo, String genero, String email) {
         this.titulo = titulo;
         this.genero = genero;
         this.email = email;
-        this.emailDeQuemIndicou = new ArrayList<>();
     }
 
     public String getTitulo() {
@@ -36,14 +32,6 @@ public class Filme {
 
     public void setGenero(String genero) {
         this.genero = genero;
-    }
-
-    public List<String> getEmailDeQuemIndicou() {
-        return emailDeQuemIndicou;
-    }
-
-    public void setEmailDeQuemIndicou(List<String> emailDeQuemIndicou) {
-        this.emailDeQuemIndicou = emailDeQuemIndicou;
     }
 
     public String getEmail() {
