@@ -56,7 +56,7 @@ public class Catalogo {
         List<String> listaDeFilmesComOGenero = new ArrayList<>();
 
         for(Filme filme : listaDeFilmes){
-            if(filme.getGenero().equals(genero)){
+            if (filme.getGenero().equalsIgnoreCase(genero)){
                 listaDeFilmesComOGenero.add(filme.getTitulo());
             }
         }
@@ -94,11 +94,13 @@ public class Catalogo {
 
     public List<Filme> minhasRecomendacoes(String email) {
         List<Filme> minhasrecomendacoes = new ArrayList<>();
+
         for (Filme filme : listaDeFilmes) {
-            if ( filme.getEmail().equals(email) ) {
+            if (filme.getEmail().equalsIgnoreCase(email)) {
                 minhasrecomendacoes.add(filme);
             }
         }
+
         return minhasrecomendacoes;
     }
 }
