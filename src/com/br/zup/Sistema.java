@@ -153,10 +153,10 @@ public class Sistema {
         Usuario usuario = listaDeUsuarios.pesquisarUsuarioPeloEmail(email);
         IO.mostrar("Digite o título do filme");
         String titulo = IO.pegarLinha();
-        IO.mostrar("Digite o gênero do filme");
-        String genero = IO.pegarLinha();
 
-        Filme filme = usuario.getMeusFavoritos().adicionarFilme(titulo, genero, email);
+        Filme filme = catalogo.pesquisarFilme(titulo); // Bloqueia filme que não está no catálogo ir para a lista de favoritos
+
+        usuario.getMeusFavoritos().adicionarFilme(titulo, filme.getGenero(), email);
 
         IO.mostrar("Filme adicionado na sua lista de favoritos.");
 
