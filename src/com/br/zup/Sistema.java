@@ -50,6 +50,9 @@ public class Sistema {
      */
     public static Filme adicionarRecomendacao() throws Exception {
         String email = perguntarEmail();
+
+        Usuario usuario = listaDeUsuarios.pesquisarUsuarioPeloEmail(email); // Bloqueia usuário não cadastrado poder adicionar filme
+
         IO.mostrar("Digite o título do filme");
         String titulo = IO.pegarLinha();
         IO.mostrar("Digite o gênero do filme");
