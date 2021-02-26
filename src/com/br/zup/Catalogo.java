@@ -52,6 +52,11 @@ public class Catalogo {
         throw new Exception("Filme não encontrado");
     }
 
+    /**
+     * O método pega a lista com o gênero desejado pelo usuário
+     * @param genero
+     * @return lista com os filmes do gênero desejado
+     */
     public List<String> pegarFilmesComOGenero(String genero){
         List<String> listaDeFilmesComOGenero = new ArrayList<>();
 
@@ -63,6 +68,10 @@ public class Catalogo {
         return listaDeFilmesComOGenero;
     }
 
+    /**
+     * O método pega a lista de gêneros cadastrados no sistema
+     * @return a lista de gêneros existentes no sistema
+     */
     public List <String> pegarListaDeGeneros() {
         List <String> listaDeGeneros = new ArrayList<>();
 
@@ -88,19 +97,28 @@ public class Catalogo {
         return filme;
     }
 
+    /**
+     * Método get que retorna a lista de filmes
+     * @return listaDeFilmes
+     */
     public List <Filme> getFilmes() {
         return listaDeFilmes;
     }
 
+    /**
+     * Método para adicionar filme na lista de minhas recomendações à partir do e-mail do usuário
+     * @param email
+     * @return minhasRecomendacoes
+     */
     public List<Filme> minhasRecomendacoes(String email) {
-        List<Filme> minhasrecomendacoes = new ArrayList<>();
+        List<Filme> minhasRecomendacoes = new ArrayList<>();
 
         for (Filme filme : listaDeFilmes) {
             if (filme.getEmail().equalsIgnoreCase(email)) {
-                minhasrecomendacoes.add(filme);
+                minhasRecomendacoes.add(filme);
             }
         }
 
-        return minhasrecomendacoes;
+        return minhasRecomendacoes;
     }
 }

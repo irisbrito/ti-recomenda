@@ -120,12 +120,19 @@ public class Sistema {
         IO.mostrar(catalogo.getFilmes().toString());
     }
 
+    /**
+     * Método para visualizar a lista de recomendações do usuário
+     * @throws Exception
+     */
     private static void visualizarMinhasRecomendacoes() throws Exception {
         String email = perguntarEmail();
         List<Filme> lista = catalogo.minhasRecomendacoes(email);
         IO.mostrar(lista.toString());
     }
 
+    /**
+     * Método que retorna uma lista de recomendações ao usuário de acordo com o gênero desejado
+     */
     private static void visualizarRecomendacoesPeloGenero() {
         IO.mostrar("Digite o gênero desejado");
         IO.mostrar("Os gêneros cadastrados em nosso sistema são: " + catalogo.pegarListaDeGeneros());
@@ -134,7 +141,11 @@ public class Sistema {
         IO.mostrar(lista.toString());
     }
 
-
+    /**
+     * Método para adicionar um filme à lista de favoritos do usuário
+     * @return filme
+     * @throws Exception
+     */
     private static Filme adicionarAosSeusFavoritos() throws Exception {
         String email = perguntarEmail();
         Usuario usuario = listaDeUsuarios.pesquisarUsuarioPeloEmail(email);
@@ -151,6 +162,10 @@ public class Sistema {
 
     }
 
+    /**
+     * Método para remover um filme favorito da lista do usuário
+     * @throws Exception
+     */
     private static void removerFavorito() throws Exception {
         String email = perguntarEmail();
 
@@ -163,6 +178,10 @@ public class Sistema {
         IO.mostrar("Filme removido.");
     }
 
+    /**
+     * Método para visualizar os favoritos do usuário de acordo com o e-mail
+     * @throws Exception
+     */
     private static void visualizarFavoritos() throws Exception {
         String email = perguntarEmail();
 
