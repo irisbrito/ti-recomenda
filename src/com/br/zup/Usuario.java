@@ -6,12 +6,12 @@ package com.br.zup;
 public class Usuario {
     private String nome;
     private String email;
-    private MeusFavoritos meusFavoritos;
+    private Catalogo meusFavoritos;
 
     public Usuario(String nome, String email) {
         this.nome = nome;
         this.email = email;
-        meusFavoritos = new MeusFavoritos();
+        meusFavoritos = new Catalogo();
     }
 
     public String getEmail() {
@@ -30,7 +30,7 @@ public class Usuario {
         this.email = email;
     }
 
-    public MeusFavoritos getMeusFavoritos() {
+    public Catalogo getMeusFavoritos() {
         return meusFavoritos;
     }
 
