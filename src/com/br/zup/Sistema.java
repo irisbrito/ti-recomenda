@@ -55,14 +55,16 @@ public class Sistema {
         IO.mostrar("Digite o gênero do filme");
         String genero = IO.pegarLinha();
 
-        if(catalogo.pesquisarFilme(titulo).equals(titulo)){
+        Filme filme;
+
+        try {
+            filme = catalogo.pesquisarFilme(titulo);
             IO.mostrar("Filme já existe!");
+        } catch (Exception e) {
+            filme = catalogo.adicionarFilme(titulo, genero, email);
         }
 
-        Filme filme = catalogo.adicionarFilme(titulo,genero,email);
-
         return filme;
-
     }
 
     /**
