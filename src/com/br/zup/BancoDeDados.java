@@ -17,9 +17,7 @@ public class BancoDeDados {
         String nome = scanner.nextLine();
         String email = scanner.nextLine();
 
-        Usuario usuario = new Usuario();
-        usuario.setNome(nome);
-        usuario.setEmail(email);
+        Usuario usuario = new Usuario(nome, email);
         return usuario;
     }
 

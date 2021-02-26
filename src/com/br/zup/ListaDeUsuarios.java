@@ -14,10 +14,7 @@ public class ListaDeUsuarios {
         try {
             Usuario usuario = pesquisarUsuarioPeloEmail(email);
         } catch (Exception e) {
-            Usuario usuario = new Usuario();
-
-            usuario.setNome(nome);
-            usuario.setEmail(email);
+            Usuario usuario = new Usuario(nome, email);
 
             usuarios.add(usuario);
             return usuario;

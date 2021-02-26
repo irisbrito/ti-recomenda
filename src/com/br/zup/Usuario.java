@@ -8,7 +8,9 @@ public class Usuario {
     private String email;
     private MeusFavoritos meusFavoritos;
 
-    public Usuario() {
+    public Usuario(String nome, String email) {
+        this.nome = nome;
+        this.email = email;
         meusFavoritos = new MeusFavoritos();
     }
 
