@@ -76,6 +76,9 @@ public class Sistema {
      */
     private static void apagarRecomendacao() throws Exception {
         String email = perguntarEmail();
+
+        Usuario usuario = listaDeUsuarios.pesquisarUsuarioPeloEmail(email);
+
         IO.mostrar("Digite o título do filme");
         String titulo = IO.pegarLinha();
 
