@@ -38,8 +38,8 @@ public class Usuario {
     public String toString() {
         StringBuilder construtor = new StringBuilder();
 
-        construtor.append("Nome: " + nome);
-        construtor.append("E-mail: " + email);
+        construtor.append("\nNome: " + nome);
+        construtor.append("\nE-mail: " + email);
 
         return construtor.toString();
     }
